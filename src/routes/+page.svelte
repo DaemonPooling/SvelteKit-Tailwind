@@ -1,3 +1,6 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<script>
+    import CliShowoff from "../components/CLI_Showoff.svelte";
+</script>
+<body class="w-screen h-screen bg-black">
+    <CliShowoff />
+</body>

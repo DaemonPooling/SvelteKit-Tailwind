@@ -129,6 +129,7 @@
     "globrex": "^0.1.2",
     "graceful-fs": "^4.2.11",
     "graphemer": "^1.4.0",
+    "gsap": "^3.12.5",
     "has-flag": "^4.0.0",
     "hasown": "^2.0.1",
     "human-signals": "^5.0.0",

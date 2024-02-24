@@ -1,28 +1,31 @@
 <script>
-    /* TODO: Fix this */
+  import { onMount } from 'svelte';
 
-    import { onMount, afterUpdate } from 'svelte';
-    let element;
-    let displayText = '';
-    export let _class = ''
-    export let text = '';
-  
-    const animateText = () => {
-      let i = 0;
-      setInterval(() => {
-        if (i <= text.length) {
-          displayText = text.slice(0, i);
-          i++;
-        } else {
-          i = 0;
-        }
-      }, 500);
-    };
-  
-    onMount(animateText);
-    afterUpdate(animateText);
+  export let text = 'Hello guys!';
+  var displayText = ''
+  export let duration = 50
+  export let wait = 0
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  onMount(async () => {
+    for (let part of text.split(' ')) {
+      displayText = '';
+      await type(part);
+      await sleep(wait);
+    }
+  })
+
+  async function type(part) {
+    for (let i = 0; i < part.length; i++) {
+      displayText += part[i];
+      await sleep(duration);
+    }
+  }
 </script>
-  
-<div class={_class} bind:this={element}>
+
+<span>
   {displayText}
-</div>
+</span>

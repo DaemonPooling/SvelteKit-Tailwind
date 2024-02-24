@@ -1,5 +1,4 @@
 <script>
-    import { gsap } from "gsap";
 	import Type from "../utils/Type.svelte";
 </script>
 <div id="Terminal" class="flex flex-col h-screen justify-between">
@@ -12,11 +11,11 @@
           </div>
     </div>
     <div id="Console" class="w-full h-full flex-grow">
-        <Type text="Hola estoy!" _class="text-white"></Type>
+        <span>PS D:\Admin\web\intro ><Type text="HELLOO" duration=80 wait=2000/></span>
     </div>
 </div>
 <style>
     #Window_title {
-        text-shadow: 0 0 15px #fff;
+        text-shadow: 0 0 15px #sfff;
     }
 </style>
